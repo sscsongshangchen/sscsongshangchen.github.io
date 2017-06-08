@@ -1,103 +1,215 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-CN">
 
 <!-- Head tag -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!--Description-->
-    
+  <!--Description-->
+  
 
-    <!--Author-->
-    
-        <meta name="author" content="John Doe">
-    
+  <!--Author-->
+  
+  <meta name="author" content="John Doe">
+  
 
-    <!-- Title -->
-    
-    <title>归档 | Hexo</title>
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="Hexo"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Hexo"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="website" />
+  
+  <!--Page Cover-->
+  
 
-    <!-- Bootstrap Core CSS -->
-    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+  <!-- Title -->
+  
+  <title>Archives - Hexo</title>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
 
-    <!-- Custom Fonts -->
-    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
 
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
+
 
 <body>
 
-    <!-- Content -->
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
     
-
-<!-- Back Home -->
-<a class="nav-back" href="/">
-    <i class="fa fa-puzzle-piece"></i>
-</a>
-
-<!-- Page Header -->
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>归档</h1>
-                </div>
-            </div>
-        </div>
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="http://oct3pmpde.bkt.clouddn.com/timg.jpg" alt="Hexo" height="60">
+        
+      </a>
     </div>
+    <a class="header-name" href="/">
+            <span>Hexo</span>
+            的部落宅
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首页
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                归档
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                关于
+              </a>
+            </li>
+          
+            <li>
+              <a href="/project">
+                
+                  <i class="fa fa-folder-open "></i>
+                
+                项目
+              </a>
+            </li>
+          
+            <li>
+              <a href="/photo">
+                
+                  <i class="fa fa-photo "></i>
+                
+                相册
+              </a>
+            </li>
+          
+            <li>
+              <a href="/guestbook">
+                
+                  <i class="fa fa-edit "></i>
+                
+                留言
+              </a>
+            </li>
+          
+            <li>
+              <a href="/atom.xml">
+                
+                  <i class="fa fa-send "></i>
+                
+                RSS
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
 </header>
 
+
+  <!-- Main Content -->
+  
+
 <!-- Main Content -->
-<div class="container">
+<div class="archive content-area">
+  <div class="container">
+    <h1 class="entry-title">Archives</h1>
     <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy
+          1. group site.posts by year
+          2. sort posts-in-one-year by Month and Day
+        -->
+        
+
+        
+          <h2 class="year">2017</h2>
+          <ul class="list">
             
-                <div class="post-preview archive">
-    <a href="/2017/06/07/hello-world/">
-        <h1 class="post-title archive">
-            Hello World
-        </h1>
+  <li>
+    <span class="date">
+      2017-06-07
+    </span>
+    <a href="/2017/06/07/hello-world/" class="title">
+      Hello World
     </a>
-</div>
- 
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pagiantion">
-    
-    
-</ul>
-        </div>
+  </li>
+
+
+          </ul>
+        
+      </div>
     </div>
+  </div>
 </div>
 
 
-    <!-- Scripts -->
-    <!-- jQuery -->
-<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-	console.log('Hexo-theme-hollow designed by zchen9 🙋 © 2015-' + (new Date()).getFullYear());
-</script>
-
-    <!-- Google Analytics -->
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>Hexo &copy; 2017</span>
     
+      <span class="split">|</span>
+      <span>尚辰的小房子</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
 
 </body>
 

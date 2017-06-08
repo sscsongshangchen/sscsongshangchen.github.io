@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Christian_Song"/>
+      <meta property="og:title" content="iOS9 with Swift 类的构造器（四）"/>
   
   <!--Open Graph Description-->
   
@@ -28,7 +28,7 @@
   <meta property="og:site_name" content="Christian_Song"/>
   <!--Type page-->
   
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content="article" />
   
   <!--Page Cover-->
   
@@ -46,7 +46,7 @@
     </script>
   <!-- Title -->
   
-  <title>Archives: 2017 - Christian_Song</title>
+  <title>iOS9 with Swift 类的构造器（四） - Christian_Song</title>
 
 
   <link rel="shortcut icon" href="/images/favicon.ico">
@@ -157,98 +157,59 @@
 
 
   <!-- Main Content -->
-  
-
-<!-- Main Content -->
-<div class="archive content-area">
-  <div class="container">
-    <h1 class="entry-title">2017</h1>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy
-          1. group site.posts by year
-          2. sort posts-in-one-year by Month and Day
-        -->
-        
-
-        
-          <h2 class="year">2017</h2>
-          <ul class="list">
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            iOS9 with Swift 类的构造器（四）
             
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit4/" class="title">
-      iOS9 with Swift 类的构造器（四）
-    </a>
-  </li>
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2017-06-09
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>可失败构造器（Failable initializers）：<br>直到一个可失败构造器完成了它所有的初始化任务，它才可以：return nil。因此，比如一个可失败子类构造器必须在所有的子类属性被初始化和调用super.init( ) 之后才可以return nil。（这里有一个有趣的讽刺：在销毁实例之前，构造器必须完成建立实例；但是，为了保证父类有一个清晰的的初始化，这个工作又是必须的。）<br>如果一个被可失败构造器调用的构造器是可失败的，这个调用语法不会改变，并且也不需要其他的检查——如果一个被调用的可失败构造器失败了，那么整个初始化进程将立刻失败并终止。<br>对于重写与代理，一个返回隐式解包（init!）的可失败构造器与正常构造器被一样对待。对于返回可选值的可失败构造器(init?)，这里有一些额外的限制要求：<br>1、init可以重写init? ， 反之不可以<br>2、init?可以调用init<br>3、init可以调用init? （通过使用init并！解包，如果用？，失败情况会导致程序崩溃）<br>具体见下示例：</p>
+<p>Image A<br>TIPS：<br>子类构造器绝不可以为父类设置常量（let），这是因为在允许子类做 除了不能初始化自己的属性和调用另一个构造器之外 所有事 的时候，父类已经完成了自身的初始化。</p>
 
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit5/" class="title">
-      Untitled
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit3/" class="title">
-      iOS9 with Swift 类的构造器（三）
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit2/" class="title">
-      iOS9 with Swift 类的构造器（二）
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit1/" class="title">
-      iOS9 with Swift 类的构造器（一）
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosduotai/" class="title">
-      iOS9 with Swift 多态
-    </a>
-  </li>
-
-
-          </ul>
-        
-          <h2 class="year">2016</h2>
-          <ul class="list">
-            
-  <li>
-    <span class="date">
-      2016-06-08
-    </span>
-    <a href="/2016/06/08/blog/" class="title">
-      写在博客建立之时的话
-    </a>
-  </li>
-
-
-          </ul>
-        
-      </div>
+        </div>
+      </article>
     </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2017/06/09/iosinit5/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2017/06/09/iosinit3/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
   </div>
 </div>
 

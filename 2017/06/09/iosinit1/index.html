@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Christian_Song"/>
+      <meta property="og:title" content="iOS9 with Swift 类的构造器（一）"/>
   
   <!--Open Graph Description-->
   
@@ -28,7 +28,7 @@
   <meta property="og:site_name" content="Christian_Song"/>
   <!--Type page-->
   
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content="article" />
   
   <!--Page Cover-->
   
@@ -46,7 +46,7 @@
     </script>
   <!-- Title -->
   
-  <title>Archives: 2017 - Christian_Song</title>
+  <title>iOS9 with Swift 类的构造器（一） - Christian_Song</title>
 
 
   <link rel="shortcut icon" href="/images/favicon.ico">
@@ -157,98 +157,58 @@
 
 
   <!-- Main Content -->
-  
-
-<!-- Main Content -->
-<div class="archive content-area">
-  <div class="container">
-    <h1 class="entry-title">2017</h1>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy
-          1. group site.posts by year
-          2. sort posts-in-one-year by Month and Day
-        -->
-        
-
-        
-          <h2 class="year">2017</h2>
-          <ul class="list">
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            iOS9 with Swift 类的构造器（一）
             
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit4/" class="title">
-      iOS9 with Swift 类的构造器（四）
-    </a>
-  </li>
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2017-06-09
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>隐含构造器：<br>如果一个类，或是没有存储属性，或是已经初始存储属性在声明中，并且没有显式构造器，那么它就含有一个隐含构造器init( )。<br>指定构造器：<br>默认情况下，类的构造器是指定构造器。<br>只要一个类含有“没有在声明中初始化的存储属性”，那么这个类至少需要一个指定构造器。而且当这个类产生实例的时候，必须调用这些指定构造器中的一个，以初始化所有的储存属性。一个指定构造器可能不会委托此类中的其他构造器；对于指定构造器，使用self.init(…)是不合法的。<br>便利构造器：<br>关键字 convenience来标记便利构造器。<br>它是一个委托构造器。所以必须包含self.init(…)。<br>其必须调用一个本类中的指定构造器，或者本类中的便利构造器（这样就形成了构造器链），不管如何链的最后需要一个指定构造器来结束。<br>//… 例子略<br>应该注意到：一个构造器可以“说”什么和什么时候“说”的规则依然适用。一个指定构造器除初始化属性外不可以调用self，除非该类的所有属性已经初始化完毕。而便利构造器是一个委托构造器，所以直到它调用完一个指定构造器才能使用self（而且不能够设置一个不可改变属性）</p>
 
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit5/" class="title">
-      Untitled
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit3/" class="title">
-      iOS9 with Swift 类的构造器（三）
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit2/" class="title">
-      iOS9 with Swift 类的构造器（二）
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit1/" class="title">
-      iOS9 with Swift 类的构造器（一）
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosduotai/" class="title">
-      iOS9 with Swift 多态
-    </a>
-  </li>
-
-
-          </ul>
-        
-          <h2 class="year">2016</h2>
-          <ul class="list">
-            
-  <li>
-    <span class="date">
-      2016-06-08
-    </span>
-    <a href="/2016/06/08/blog/" class="title">
-      写在博客建立之时的话
-    </a>
-  </li>
-
-
-          </ul>
-        
-      </div>
+        </div>
+      </article>
     </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2017/06/09/iosinit2/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2016/06/08/blog/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
   </div>
 </div>
 

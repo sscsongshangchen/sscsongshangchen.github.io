@@ -46,7 +46,7 @@
     </script>
   <!-- Title -->
   
-  <title>Archives: 2017 - Christian_Song</title>
+  <title>Christian_Song</title>
 
 
   <link rel="shortcut icon" href="/images/favicon.ico">
@@ -157,98 +157,66 @@
 
 
   <!-- Main Content -->
-  
-
-<!-- Main Content -->
-<div class="archive content-area">
-  <div class="container">
-    <h1 class="entry-title">2017</h1>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy
-          1. group site.posts by year
-          2. sort posts-in-one-year by Month and Day
-        -->
-        
-
-        
-          <h2 class="year">2017</h2>
-          <ul class="list">
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            Untitled
             
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit4/" class="title">
-      iOS9 with Swift 类的构造器（四）
-    </a>
-  </li>
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2017-06-09
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>iOS9 with Swift 类的构造器（五）<br>要求构造器：<br>对于类的构造器还有一件事要说明：前缀为required的构造器。这意味着子类不能遗漏它。而这接下来就意味着如果一个子类使用指定构造器（这样会阻碍继承），它必须重写这个构造器（required）。一个例子：</p>
+<p>1</p>
+<p>这段代码无法编译。我们需要继承或者重写标记有required的构造器。由于，我们要引入新的Boolean值，因此不能采取继承的方法。所以我们要重写它：</p>
+<p>2<br>上例中，被重写的required构造器并没有被override标记，而是被required标记，这说明required将会继续在NoiseDog的子类中继续传递。<br>以上是怎样制造一个要求构造器，下面我将谈谈为什么要制造要求构造器。</p>
+<p>Cocoa带来的意外：<br>当你在subclassing某种Cocoa类的时候，构造器继承规定可能会导致一些意料之外的事情。比如，在进行iOS开发的过程中，你肯定会声明一个UIViewController的子类，let’s say，你为你的子类设置一个指定构造器。这个指定构造器在父类（UIViewController）中是init(nibName:bundle:)，所以，遵照规定，你调用了此构造器：</p>
+<p>3<br>看起来还不错，但是你然后就会发现在别处的代码出现了问题：使得ViewController 实例不再编译了。</p>
+<p>4<br>在写下指定构造器之前这段代码是合法的；现在则非法。原因在于在子类中使用指定构造器，将阻碍构造器继承，你需要重写该构造器（init(nibName:bundle)），即使你已经你在子类中调用过它。</p>
+<p>5<br>这样图4中的实例就可以顺利编译了。<br>然而现在又有一个意外：ViewController 无法编译了。原因在于：有一个要求（required）构造器在ViewController中。所以你必须使用它。而你之前不了解它，因为当ViewController没有显式构造器，你继承了要求构造器；现在你又阻碍了继承。幸运的是，Xcode的Fix-It功能提供了stub运用。他不会做任何事（甚至调用它，程序将会崩溃），但是它使得程序可以编译：</p>
+<p>6<br>在之后的章节中我会讲解这个要求构造器如何被使用。</p>
 
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit5/" class="title">
-      Untitled
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit3/" class="title">
-      iOS9 with Swift 类的构造器（三）
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit2/" class="title">
-      iOS9 with Swift 类的构造器（二）
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit1/" class="title">
-      iOS9 with Swift 类的构造器（一）
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosduotai/" class="title">
-      iOS9 with Swift 多态
-    </a>
-  </li>
-
-
-          </ul>
-        
-          <h2 class="year">2016</h2>
-          <ul class="list">
-            
-  <li>
-    <span class="date">
-      2016-06-08
-    </span>
-    <a href="/2016/06/08/blog/" class="title">
-      写在博客建立之时的话
-    </a>
-  </li>
-
-
-          </ul>
-        
-      </div>
+        </div>
+      </article>
     </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2017/06/09/iosduotai/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2017/06/09/iosinit4/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
   </div>
 </div>
 

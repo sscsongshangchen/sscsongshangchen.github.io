@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Christian_Song"/>
+      <meta property="og:title" content="iOS9 with Swift 类的构造器（二）"/>
   
   <!--Open Graph Description-->
   
@@ -28,7 +28,7 @@
   <meta property="og:site_name" content="Christian_Song"/>
   <!--Type page-->
   
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content="article" />
   
   <!--Page Cover-->
   
@@ -46,7 +46,7 @@
     </script>
   <!-- Title -->
   
-  <title>Archives: 2017 - Christian_Song</title>
+  <title>iOS9 with Swift 类的构造器（二） - Christian_Song</title>
 
 
   <link rel="shortcut icon" href="/images/favicon.ico">
@@ -157,98 +157,58 @@
 
 
   <!-- Main Content -->
-  
-
-<!-- Main Content -->
-<div class="archive content-area">
-  <div class="container">
-    <h1 class="entry-title">2017</h1>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy
-          1. group site.posts by year
-          2. sort posts-in-one-year by Month and Day
-        -->
-        
-
-        
-          <h2 class="year">2017</h2>
-          <ul class="list">
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            iOS9 with Swift 类的构造器（二）
             
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit4/" class="title">
-      iOS9 with Swift 类的构造器（四）
-    </a>
-  </li>
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2017-06-09
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>子类的构造器<br>在阐明和辨别清楚指定构造器和便利构造器之后，我们就可以开始了解子类的构造器了。<br>未声明构造器：<br>如果子类不是必须有它自身的构造器，并且如果它没有声明自身的构造器，那么它继承父类的构造器。<br>只有便利构造器：<br>如果子类不是必须有它自身的构造器，它是有资格声明便利构造器的，因为继承提供了便利构造器所需要的指定构造器。<br>指定构造器：<br>如果子类定义了自身的指定构造器，整件事情就不一样了。<br>这种情况下，构造器就不被继承了。显式指定构造器的存在阻碍了构造器的继承。现在子类的构造器就只有显式指定的构造器了。（还有一个例外将在一会儿讲解）<br>每一个子类的指定构造器现在有一个额外的要求：它必须通过super.init( )调用一个父类的指定构造器。此外，调用self 的规则依然适用。一个子类的指定构造器必须按照如下的顺序和要求：<br>1、它必须保证这个子类的所有属性均被初始化。<br>2、它必须调用super.init( )并且这个被调用的构造器必须是指定构造器<br>3、现在，它才可以使用self去干别的事情：调用实例方法或者获取继承的属性。<br>子类中的便利构造器还是应该遵守先前提到的规则。他们必须调用self.init( )来直接或者间接地调用一个指定构造器。在没有继承构造器的情况下，便利构造器调用的构造器必须是在子类中出现的。<br>WARNING：<br>如果一个指定构造器不调用super.init(…)，那么如果可能，super.init(…)将被隐式调用。下面的代码是合法的：<br>class Cat  {<br>     }<br>class NamedCat : Cat  {<br>         let name : String<br>         init(name:String) {<br>                 self.name = name<br>             }<br>     }<br>在我看来，这个swift特性是一个错漏。swift不应该纵容这种隐蔽的方法，即使它可能是“有帮助的”。我觉得这段代码不应该可以编译。一个指定构造器始终必须显式调用super.init(…)</p>
 
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit5/" class="title">
-      Untitled
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit3/" class="title">
-      iOS9 with Swift 类的构造器（三）
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit2/" class="title">
-      iOS9 with Swift 类的构造器（二）
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosinit1/" class="title">
-      iOS9 with Swift 类的构造器（一）
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosduotai/" class="title">
-      iOS9 with Swift 多态
-    </a>
-  </li>
-
-
-          </ul>
-        
-          <h2 class="year">2016</h2>
-          <ul class="list">
-            
-  <li>
-    <span class="date">
-      2016-06-08
-    </span>
-    <a href="/2016/06/08/blog/" class="title">
-      写在博客建立之时的话
-    </a>
-  </li>
-
-
-          </ul>
-        
-      </div>
+        </div>
+      </article>
     </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2017/06/09/iosinit3/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2017/06/09/iosinit1/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
   </div>
 </div>
 

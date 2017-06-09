@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="All that glisters is not gold.">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="尚辰">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="iOS9 with Swift 泛型"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="All that glisters is not gold." />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Christian_Song"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+  <!-- Title -->
+  
+  <title>iOS9 with Swift 泛型 - Christian_Song</title>
+
+
+  <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="http://oct3pmpde.bkt.clouddn.com/timg.jpg" alt="Christian_Song" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>Christian_Song</span>
+            的部落宅
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首页
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                归档
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                关于
+              </a>
+            </li>
+          
+            <li>
+              <a href="/project">
+                
+                  <i class="fa fa-folder-open "></i>
+                
+                项目
+              </a>
+            </li>
+          
+            <li>
+              <a href="/photo">
+                
+                  <i class="fa fa-photo "></i>
+                
+                相册
+              </a>
+            </li>
+          
+            <li>
+              <a href="/guestbook">
+                
+                  <i class="fa fa-edit "></i>
+                
+                留言
+              </a>
+            </li>
+          
+            <li>
+              <a href="/atom.xml">
+                
+                  <i class="fa fa-send "></i>
+                
+                RSS
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            iOS9 with Swift 泛型
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2017-06-09
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>泛型：<br>泛型是一种类型的占位符，具体的类型将会在之后被填充。由于Swift的严格类型检验，这是很有用的。在不能或者不想提前设置类型的情况下，程序可以不被严格类型检验所限制。<br>当然理解泛型实质上并非削弱了Swift的严格类型检查机制是非常重要的。特别地，它没有把解决类型推迟到运行的时候。当你使用泛型的时候，你的代码还是会说明清楚它的实际类型；在运行的时候，泛型代表的类型其实也是清清楚楚的。你的代码中需要写类型的地方可以用泛型来替代，这是就不需要完全表达清楚，但是这个代码被其他代码使用的时候，这个类型就需要被明确了。虽然占位符是泛型，但是实际上处理的时候是按照正常的类型来的。<br>可选值是一个很好的例子。任何类型都可以包装为一个可选值。同样你也不知道一个可选值中包装的是哪一种类型。这是怎么做到的？其中的原因就是可选值是一个泛型类型。下面我说说是怎么工作的。<br>我之前有提到可选值是一个枚举类型，有两个case：.None ; .Some。如果一个可选值的case是.Some，那就有关联值——被可选值包装的类型。但是该关联值究竟是什么类型的呢？在一方面，它可以是任何类型，这也正是为什么可选值是可以任何类型的原因。再一方面，可选值是包含特殊类型的。当你进行解包的时候，他要被赋给它本身的类型，所以才能向它发送指令。<br>在Swift头文件中可选值的枚举声明像这样开始：</p>
+<p>1<br>这个句法的意思就是：在声明过程中，我用捏造出的类型——占位符，我把它叫做wrapped。它是确切的而且是独立的。当然现在还不知道他究竟是什么类型、你只需要知道我说wrapped是代表，一个将会确定的类型。一旦该可选值被建立，那么wrapped所代表的类型就确定了。<br>可选值声明更详细的如下所示：</p>
+<p>2<br>声明wrapped是一个占位符后，我们将会继续使用它。.Some 这个case有一个关联值，类型是wrapped。我们还有一个接纳wrapped类型参数的构造器。因此，无论将来的具体类型是什么，构造器参数和关联值都会是同样的类型。<br>正是构造器参数和关联值类型的一致才允许后者被实现。。在可选值枚举的声明过程中，wrapped是一个占位符。但是在现实中，当一个实际可选值被实现，将会有具体的类型给出。我们常常用问号语法糖（String?）并且构造器将在幕后被调用。现在为了表意清楚起见，使用显式构造器：</p>
+<p>3<br>在这个可选实例中，wrapped的类型就被决定了。显然，howdy是一个字符串。编译器就接到了指令，在后台，将所有的wrapped都替换为了String。因此s其实在编译器的“脑海”中是这样的：</p>
+<p>4<br>这就是wrapped被替代之后的伪代码。我们可以将它总结为Optional\<string\>。事实上，这是合法的语法。我们可以这样写上面的代码：</string\></p>
+<p>5<br>大量的内置Swift类型包含泛型。<br>泛型声明（Generic Declarations）：</p>
+<p>下面是“哪里可以用泛型”的列表：<br>泛型协议 + Self：<br>在协议中，用关键字Self可以将这个协议边做泛型。<br>Self 是作为一个占位符，代表着采用者的类型。比如，这里有一个例子，在声明方法是引用了一个Self参数：</p>
+<p>6<br>这意味着如果Bird对象类采用了该协议，那么f的类型就是Bird了。<br>泛型协议 + 控类型别名：<br>协议可以在不确定别名具体代表哪种类型的条件下，声明一个类型别名，即typealias语句不包含等于号。这也会把协议变成泛型协议；这个别名，叫做关联类型（associated type），是一个占位符。比如：</p>
+<p>7<br>采用者会具体声明占位符的类型。如果Bird结构体采用了Flier协议，并且flockTogetherWith参数f是Bird类型，那么也就决定了第二个mateWith的参数也应该是Bird类型。即：</p>
+<p>8<br>上面的代码和f:Self.other 效果是一样的。<br>泛型函数：<br>函数声明可以在几乎任何地方使用泛型（参数、返回值和函数内部）。将占位符名字置于\&lt;>中，并跟在函数名之后：</p>
+<p>9<br>调用者会使用特定的类型来代替占位符：</p>
+<p>10<br>因此，此地的T就是String。<br>泛型对象类型：<br>在对象类型声明的尖括号中，可以随便用泛型占位符。在对象名之后用尖括号圈起占位符名字：</p>
+<p>11<br>该对象类型的使用者可随意确定类型。</p>
+<p>12<br>此处T就是String。<br>对于泛型函数和泛型对象类型（使用尖括号），可以包含多个占位符名，并用逗号隔开。比如：</p>
+<p>13<br>这两个占位符可以代表不同的类型，虽然他们不一定非要这么做。<br>类型约束（Type Constraint）：<br>上面我们谈到的都是允许任何类型去替代占位符的方法。或者，你也可以通过限制，来使只有有资格的类型去决定占位符是什么类型。这就叫做类型约束。最简单的类型约束形式就是：在占位符第一次出现时，在其后面加分号和类型名。类型名可以是类名和协议名。<br>回到我们的Flier和flockTogetherWith函数。假定我们想要说，flockTogetherWith的参数应该是采用了Flier协议的类型。那么我们就不能通过在协议中声明该参数的类型为Flier来实现。</p>
+<p>14<br>这个代码就是说：采用该协议的采用者的函数的参数f必须为Flier类型，这显然和我们想的不太一样：</p>
+<p>15<br>我们想要的是Bird采用该协议，而且f必须是Flier的采用者，比如说是Bird。可能可以这样实现：</p>
+<p>16<br>不过这样是不合法的：一个协议不能将自己作为类型约束。一个变通方法就是在定义一个额外的协议，让Flier自己采用，然后再把Other约束到该方法上。</p>
+<p>17<br>这个合法的采用者可以是：</p>
+<p>18<br>在泛型函数或者泛型对象类型中，这个类型约束需要放到尖括号里面。比如：</p>
+<p>19<br>现在你不能给该函数参数为String，因为String不是一个Flier。此外，如果Brid和Insect都是Flier采用者，那么两个Bird可以用作此处参数，两个Insect也可以，当然一个Bird一个Insect不小，因为这里只有一个T。<br>占位符的类型约束常常是保证编译器能向占位符类型实例传特定消息的有效方法。比如myMin方法（返回特定类型中的最小值）：</p>
+<p>20<br>但是它不会编译。原因在于thing<a href="">ix</a> \&lt; minimum这一行，编译器不知道它们的类型即T，能不能被用了比较。解决办法就是给T一个协议，Comparable protocol。</p>
+<p>21<br>现在它就可以编译了。正是因为向编译器保证了可以引入的参数都是可比较的。可以比较的内置类型（Int String Double Character）都采用了该协议。如果你看了Swift头文件，你就会发现min函数其实就是这样定义的，也是为了这个原因。<br>一个泛型协议（用Self 或者 关联类型的）可以在泛型中被用作一个类型，作为类型约束。下面的不会编译：</p>
+<p>22<br>为了将这个Flier泛型协议用作类型，我们必须写一个泛型而且用Flier为类型约束：</p>
+<p>23<br>显式具体化：<br>之前的例子都是通过类型推断来决定占位符的实际类型的。然而还有一种方式去进行决定：手动决定类型。在某些情况下，这种显式具体化是强制要求的，比如占位符类型无法通过推断来决定的时候。<br>这里有两种显式具体化的形式：<br>泛型协议 + 关联类型：<br>通过使用协议别名的显式类型分配的typealias的声明，协议的采用者可以手动决定协议的关联类型。比如：</p>
+<p>24<br>泛型对象类型：<br>通过首先在声明中写包含在尖括号中的真正类型，泛型对象类型的使用者可以手动决定对象的占位符类型。比如：</p>
+<p>25<br>（这就解释了为什么有用Optional\<string\>）<br>你不能直接显式具体化一个泛型函数。但是你可以声明一个用泛型占位符的泛型类型（带有非泛型函数），这个泛型类型的显式具体化可以决定这个占位符，继而决定这个函数。</string\></p>
+<p>26<br>当一个类是泛型，你在subclass它时可以自己决定他的泛型的类型（new in Swift 2.0），有两张方式：</p>
+<p>27<br>1、你可以将子类做成和父类一样的泛型占位符类型:</p>
+<p>28<br>2、也可以将它进行显式具体化：</p>
+<p>29<br>关联类型链：<br>当一个泛型占位符通过关联类型采用泛型协议时，该关联类型可以通过点号链接到占位符名字而确定其类型。<br>这里有个例子。想象在一个游戏程序中，soldiers和archers是彼此的敌人。我要通过建立同时采用Fighter协议（有Enemy关联类型，Enemy采用Fighter的）的Soldier结构体和Archer结构体来描述这种情况。（同样，我要用额外的、Fighter采用的一个协议）</p>
+<p>30<br>我将手动决定这两个结构体的关联类型：</p>
+<p>31<br>然后我创建一个泛型结构体去表示阵营。</p>
+<p>32<br>现假定，某个阵营可能包含敌对阵营的一个间谍。即Soldier阵营的spy是Archer，Archer阵营的spy是Soldier。更一般地，由于T是Fighter，所以spy也是Fighter。通过关联类型链接至占位符名可以清楚地表述：</p>
+<p>33</p>
+<p>34</p>
+<p>35<br>更长的关联类型名链也是允许的。特别是，当一个泛型协议有一个关联值（本身就采用了带着关联值的泛型协议）。<br>比如，我们给两个阵营角色武器：a soldier has a sword, while an archer has a bow.分别建立Sword和Bow结构体，再让它们采用Wieldable协议：</p>
+<p>36<br>我将把Weapon（采用了Wieldable）关联类型赋给Fighter，然后再一次为它们决定类型。</p>
+<p>37<br>现在再假设每个Fighter都有偷敌人武器的能力：为Fighter泛型协议加一个steal(weapon: from:)方法。如何正确定义该方法，才能使采用者正确定义参数的类型？<br>from:的参数类型是Fighter的Enemy，即Self.Enemy。而对于weapon的参数类型就是该Enemy的武器了，所以就是Self.Enemy.Weapon:</p>
+<p>38<br>这段代码将会编译，如果我们省略Self，也是可以的。<br>由于改变了协议，原先的代码也要改变成如下：</p>
+<p>39<br>Swift头文件中关联类型链有着大量应用,Generator.Element相当常见，因为它表示了一系列的element的类型。这个系列类型的泛型协议有一个关联类型产生器，它采用了产生器类型的泛型协议，这又将以此有一个关联类型element。<br>额外约束：<br>一个简单的类型约束会将一个占位符限制为一个单一的类型。有时候你往往想要多一点限制，即额外约束（addtional constraints）。<br>在一个泛型协议中，类型别名限制的分号其实和类型定义处的分号是一样的。所以它之后可以加多重协议或者父类（单个）。</p>
+<p>40<br>在Generic协议中，关联类型T只可以是采用了Flier和Walker协议的类型，U则只可以是Dog类（或其子类）和采用了Flier协议的类型。<br>在泛型函数或者泛型对象类型的尖括号中，这种语法是错误的。你可以这样代替：使用where语句，其中包括一个或者多个额外约束：</p>
+<p>41<br>通过关联类型链，where语句也可以用在已经约束了占位符的协议的关联类型上。下面的伪代码展现了我想说的。我省略了where语句的内容，以专注于其用法。</p>
+<p>42<br>T已经被约束为Flier。Flier本身就是一个带有关联类型Other的泛型协议，因此T的类型将会决定Other。通过限制Other的类型，where语句更进一步地约束了能够约束T的类型。<br>那么我们怎样实现呢？</p>
+<p>43<br>Bird和Insect都采用了Flier，但是他们并非都有资格调用flockTogether。</p>
+<p>44<br>类也一样：</p>
+<p>45</p>
+<p>46<br>除却分号，我们还可以用 == 和类型名。在关联类型链末端的类型必须是确切的类型，而非仅仅是采用者或者子类。比如：</p>
+<p>47<br>Insect成立，而Bird不成立。<br>而使用了==，上面的Pig类必须是Dog才行，NoisyDog则不成立。<br>在==后面的类型也可以是关联类型链。此时两端的关联类型链必须一致。</p>
+<p>48<br>上面的例子，可以引入两个相同的结构体，但是如果不一样，就不满足其条件了。<br>Swift头文件扩展了 ==和where语句相结合的办法。特别是用来限制系列类型。比如，String的appendContentOf方法被声明两次：</p>
+<p>49<br>appendContentOf方法不仅可以将两个String组合在一起，而且还可以将一个String和一个字符序列（Character Sequence）组合：</p>
+<p>50<br>字符串数组也可以：</p>
+<p>51<br>它们都是字符序列，就像appendContentOf的第二个声明中的，其实就是采用了SequenceType 协议的类型。都是它也不是之前的序列；它的Generator.Element必须是Character。Generator.Element链是Swift表达序列元素类型的方法。<br>数组结构体也有appendContentsOf，但是有一点区别：</p>
+<p>52<br>相信大家都知道有什么区别，已经其中的原因。</p>
+
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2017/06/09/iosextension/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2017/06/09/iosprotocol/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>Christian_Song &copy; 2017</span>
+    
+      <span class="split">|</span>
+      <span>尚辰的小房子</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+</body>
+
+</html>

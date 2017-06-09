@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="All that glisters is not gold.">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="尚辰">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="iOS9 with Swift 扩展"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="All that glisters is not gold." />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Christian_Song"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+  <!-- Title -->
+  
+  <title>iOS9 with Swift 扩展 - Christian_Song</title>
+
+
+  <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="http://oct3pmpde.bkt.clouddn.com/timg.jpg" alt="Christian_Song" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>Christian_Song</span>
+            的部落宅
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首页
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                归档
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                关于
+              </a>
+            </li>
+          
+            <li>
+              <a href="/project">
+                
+                  <i class="fa fa-folder-open "></i>
+                
+                项目
+              </a>
+            </li>
+          
+            <li>
+              <a href="/photo">
+                
+                  <i class="fa fa-photo "></i>
+                
+                相册
+              </a>
+            </li>
+          
+            <li>
+              <a href="/guestbook">
+                
+                  <i class="fa fa-edit "></i>
+                
+                留言
+              </a>
+            </li>
+          
+            <li>
+              <a href="/atom.xml">
+                
+                  <i class="fa fa-send "></i>
+                
+                RSS
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            iOS9 with Swift 扩展
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2017-06-09
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>扩展：<br>扩展是将你自己的代码插入到已经存在的对象类型中的方法，即extending an existing object type。这种扩展可以在自己定义的类型中，也可以是Swift本身的对象类型，还可以是Cocoa的对象类型。总之，扩展可以将你的代码打入你的甚至别人的类型中！<br>扩展的声明必须是在文件的最顶端。声明扩展：关键字extension放在已经存在的对象类型名之前，之后如果要加协议，那么就添加冒号和要添加的协议，之后再加大括号，里面写内容。此处的限制如下：<br>1、扩展不能重写已经存在的成员。（但是它可以重载已经存在的方法）<br>2、扩展不能声明存储属性。（但是它可以声明计算属性）<br>3、类的扩展不能声明指定构造器和析构器。（但是它可以声明便利构造器）<br>扩展对象类型：<br>在真实的编程过程中，为了封装一些不存在的函数（通过将它表达为属性或者方法），我有时会扩展Swift内部类型或者Cocoa类型。这是一些真实app的例子：<br>在某个纸牌游戏中，我需要进行洗牌，而牌储存在数组里面。那么我就扩展了Swift的Array，给它一个shuffle方法：</p>
+<p>1<br>再如Cocoa的Core Graphics 框架有很多很有用的函数与CGRect结构体有关，Swift对它有诸多扩展，不过对于取得CGRect的中心坐标（Center Point : CGPoint），还没有捷径可走。所以我就扩展出了center属性：</p>
+<p>2<br>扩展可以定义static和class方法。由于对象类型常常是全局可用的，所以这不失为是构造一个全局函数的好办法。比如，如果觉得金色会在开发中常常使用到，就没有必要每一次都重复定义，可以将它封装在全局函数中。然而也不需要直接构造一个全局函数，我们可以将他封装在UIColor中：</p>
+<p>3<br>现在你就可以像调用UIColor.redcolor一样，使用UIColor.myGoldenColor来调用颜色了。<br>另一个扩展很好用的地方就是使Cocoa内置类和你自己的数据类型一起工作。比如在Zotz App中，我定义了一个枚举类型，用来读档存档。</p>
+<p>4<br>其中的问题就是，让我存档时我需要每次调用rawValue。</p>
+<p>5<br>这看起来很丑，所以必须要改。我们可以教会NSCoder（coder的类）怎样去干活儿。在这个扩展中，我重载了encoderObject:forKey” 方法：</p>
+<p>6<br>事实上，我将rawValue的调用从我自己的代码中放进了NSCoder里。现在我就可以这样调用了：</p>
+<p>7<br>扩展还可以整理对象类型的代码。一个常见的应用就是为对象类型增加其采用的协议。比如这样：</p>
+<p>8<br>如果你觉得多行定义你的对象类型太复杂，那么用扩展可以很好地分解代码。<br>当你对Swift的结构体（Struct）进行扩展的时候，一个有趣的事情发生了：你声明一个构造器，原先的隐式构造器（Implicit initializer）可以保留下来：</p>
+<p>9<br>这段代码意味着你可以通过显式构造器Digit（），也可以用原先的隐式构造器Digit（number：）。这样即使我们显式定义了构造器，也不会使原先的隐式构造器消失。<br>扩展协议（Extending Protocols）：<br>在Swift2.0中，你可以扩展协议了！<br>像扩展其他的对象类型一样，你也可以扩展协议的方法和属性。不像协议的声明中方法和属性仅仅是要求采用者实现，扩展协议会是采用者继承该方法和协议，也就是说它们是真正的方法和属性。</p>
+<p>10<br>看上面，Bird可以不用实现fly（）就继承Flier。这是因为Flier协议的扩展提供了该方法，Bird实际上继承了fly（）：</p>
+<p>11<br>采用者可以实现从扩展协议继承来的方法，再重写它：</p>
+<p>12<br>但是请注意：这种继承不是多态的。采用者的实现不是重写；而仅仅是另一个实现。内部识别规则不适用，关键是引用。</p>
+<p>13<br>即使f在内部其实是Insect(用is运算符可以知道)，fly消息还是会发送给Flier。<br>为了将它变得看起来像多态继承，我们必须将fly在原协议中定义：</p>
+<p>14<br>现在Insect就保持了它的内部完整：</p>
+<p>15<br>这种差异是有意义的。因为协议采用不会引入动态分配。因此编译器必须进行静态决定。如果在原协议中，要求方法被声明，那么采用者就必须实现它，所以我们就可以调用该方法。但是如果该方法仅仅存在于协议扩展，这就取决于运行的动态分配（Dynamic Dispatch）。这就有可能使得协议落空，所以消息就被发送到协议扩展去了。<br>协议扩展的主要好处就是允许代码被转移至一个合适的Scope中。这里有一个例子：我有四个枚举类型，每一个都代表了Card的一个属性，Fill、Color、Shape和Number。他们都有一个人int类型的初始值。我对与每次都赋给rawValue有点烦躁了，所以就给每个枚举类型一个没有外部参数名的代理构造器，它们会调用内置的init(rawValue:)构造器：</p>
+<p>16<br>尽管我不喜欢这样的方式，但是在Swift1.2之前我没有任何办法。而现在，我可以用协议扩展来改变这种情况。带有初始值的枚举类型将会自动采用内置的协议 Rawpresentable，初始值的类型别名叫做RawValue。所以我可以将我的构造器加入到此协议中：</p>
+<p>17<br>在Swift标准库中，协议扩展意味着很多全局函数可以被改写为方法。比如，在Swift1.2之前，enumerate是一个全局函数：</p>
+<p>18<br>原先这个函数只能是全局函数。<br>这个函数只作用于序列（sequence），所以也是SequenceType协议的采用者。在Swift2.0之前，怎样实现呢？enumerate可能在SequenceType协议中被定义（requirement），但是这意味着所有的采用者都要实现它，这显然不可能。所以我们只能把它声明为一个全局函数，然后用泛型约束保证入口，用序列作为参数。<br>在Swift2.0，enumerate就可以当做方法定义在SequenceType协议中了：</p>
+<p>19<br>现在就不需要什么泛型约束了，也不需要泛型，甚至不需要参数。被发送了enumerate消息的序列就是要飙车enumerate的序列。<br>这个例子的方法可以被广泛使用。很多Swift标准库的全局函数变成了方法。<br>扩展泛型：<br>当你扩展泛型类型的时候，占位符类型名对于你的扩展声明是可见的。你很可能用到它们。不过这会使你的代码变得不清楚，因为看起来你在使用没有被定义过的变量。所以最好加点注释。</p>
+<p>20<br>在Swift2.0中，泛型类型扩展可以包含where语句了。这和泛型约束的效果类似：它限制了决定泛型类型的代码，向编译器保证你的代码是合法的。<br>通过协议扩展，这意味着全局函数可以用作方法。看下面的这个例子：</p>
+<p>21<br>为什么我要用全局函数呢？因为在Swift2.0之前我不得不这么做。如果我想把它（求最小值）变成Array的一个方法，在Swift1.2之前，我可以扩展Array而且也可以引用Array的泛型占位符，然而它不能进一步限制占位符。所以这里没有办法将此方法插入Array并保证该占位符代表的类型是 Comparable，所以编译器也不允许使用\&lt;比较Array的元素。而在Swift2.0就大大不同了。不仅可以更进一步地约束泛型类型，而且还可以将它变成Array的方法。</p>
+<p>22<br>这个方法只能被元素是Comparable的序列调用，否则编译器将拒绝它们。<br>第二行不编译的原因就是因为我没有使Digit结构体采用Comparable。<br>同样这个改变也使得Swift的标准库有大规模的改变，允许把全局函数写入结构体扩展或者协议扩展作为方法。比如，全局函数find（在Swift1.2之前）变成了集合类型的indexOf方法，此方法的元素必须是Equatable。</p>
+<p>23<br>这就是协议扩展，同样也是运用where语句的泛型扩展，二者在Swift2.0之前都是不被允许的。</p>
+
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2017/06/09/iosumbrella/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2017/06/09/iosgeneric/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>Christian_Song &copy; 2017</span>
+    
+      <span class="split">|</span>
+      <span>尚辰的小房子</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+</body>
+
+</html>

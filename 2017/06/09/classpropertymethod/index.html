@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="Christian_Song"/>
+      <meta property="og:title" content="iOS9 with Swift 类的属性和方法"/>
   
   <!--Open Graph Description-->
   
@@ -28,7 +28,7 @@
   <meta property="og:site_name" content="Christian_Song"/>
   <!--Type page-->
   
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content="article" />
   
   <!--Page Cover-->
   
@@ -46,7 +46,7 @@
     </script>
   <!-- Title -->
   
-  <title>iOS开发 - Christian_Song</title>
+  <title>iOS9 with Swift 类的属性和方法 - Christian_Song</title>
 
 
   <link rel="shortcut icon" href="/images/favicon.ico">
@@ -157,131 +157,62 @@
 
 
   <!-- Main Content -->
-  
-
-<!-- Main Content -->
-<div class="archive content-area">
-  <div class="container">
-    <h1 class="entry-title">#iOS开发</h1>
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy -->
-        
-        
-          <h2 class="year">2017</h2>
-          <ul class="list">
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            iOS9 with Swift 类的属性和方法
             
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/briefintro/" class="title">
-      对之前文章的简介
-    </a>
-  </li>
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2017-06-09
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>子类可以重写他所继承得到的属性。重写必须是 属性名与属性类型一样 而且要加override前缀。子类的新属性不能有与继承属性一样的名，除非是不同类型的属性。下面的这些规则也同样适用：</p>
+<p>1、如果父类的属性是可写入的（一个存储属性或者一个带着setter的计算属性），那么子类的重写可以增加一个属性观察者。<br>2、或者子类的重写的是计算属性。这种情况下，如果父类的属性是存储属性，子类的计算属性重写必须包含setter和getter。<br>如果父类的属性是计算属性，子类的计算属性重写必须重新实现父类实现的所有访问器（accessor）；如果父类属性是只读的（只有getter），那么重写可以添加setter。</p>
+<p>重写的属性包含的函数可能会引用（读取或者写入）被继承的属性，这可以通过super关键字实现。</p>
+<p>就像结构体和枚举类型，类可以拥有static成员，也可以有class成员。这两种成员都会被继承到子类中（也是static和class 的形式）。<br>从开发者的角度来看，标记了static和class的方法最主要的差别在于static方法不能被重写。也就是说：static与class final同义。<br>static与class属性的区别类似，不过有一点需要增加，是一个比较严苛的条件：static属性可以是存储属性和计算属性，而class属性只能是计算属性。<br>class 标记属性的时候，只能是计算属性。子类继承了该计算属性，并且可以重写它（无论是写作class还是static都可以），但是如果要标记为为static，不能重写成存储属性，这是为了遵循之前提到的继承规则。</p>
 
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/ioscollectiontype/" class="title">
-      iOS9 with Swift 集合类型
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosumbrella/" class="title">
-      iOS9 with Swift 伞型
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosextension/" class="title">
-      iOS9 with Swift 扩展
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosgeneric/" class="title">
-      iOS9 with Swift 泛型
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosprotocol/" class="title">
-      iOS9 with Swift 协议
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosrefer/" class="title">
-      iOS9 with Swift 类型引用
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/ioscast/" class="title">
-      iOS9 with Swift 转型 Casting
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/classpropertymethod/" class="title">
-      iOS9 with Swift 类的属性和方法
-    </a>
-  </li>
-
-  <li>
-    <span class="date">
-      2017-06-09
-    </span>
-    <a href="/2017/06/09/iosdeinit/" class="title">
-      iOS9 with Swift 类的析构器
-    </a>
-  </li>
-
-
-          </ul>
-        
-      </div>
+        </div>
+      </article>
     </div>
-  </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2017/06/09/ioscast/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2017/06/09/iosdeinit/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
   
-<div class="container" >
-  <ul class="pager">
-    
-    
-      <li class="next">
-        <a href="/tags/iOS开发/page/2/">
-          上一页
-        </a>
-      </li>
-    
-  </ul>
-</div>
+</section>
 
 
+    </div>
+   
+　　　　
+  </div>
 </div>
 
 

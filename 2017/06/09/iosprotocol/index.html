@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="All that glisters is not gold.">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="尚辰">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="iOS9 with Swift 协议"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="All that glisters is not gold." />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Christian_Song"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+  <!-- Title -->
+  
+  <title>iOS9 with Swift 协议 - Christian_Song</title>
+
+
+  <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="http://oct3pmpde.bkt.clouddn.com/timg.jpg" alt="Christian_Song" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>Christian_Song</span>
+            的部落宅
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首页
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                归档
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                关于
+              </a>
+            </li>
+          
+            <li>
+              <a href="/project">
+                
+                  <i class="fa fa-folder-open "></i>
+                
+                项目
+              </a>
+            </li>
+          
+            <li>
+              <a href="/photo">
+                
+                  <i class="fa fa-photo "></i>
+                
+                相册
+              </a>
+            </li>
+          
+            <li>
+              <a href="/guestbook">
+                
+                  <i class="fa fa-edit "></i>
+                
+                留言
+              </a>
+            </li>
+          
+            <li>
+              <a href="/atom.xml">
+                
+                  <i class="fa fa-send "></i>
+                
+                RSS
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            iOS9 with Swift 协议
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2017-06-09
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>协议<br>协议是一种表示类型的相通性的方法，往往这些类型某些方面迥异。比如，一个Bee对象和一个Bird对象就在飞行方面有共同之处。因此定义一个Flier类型就很有用。问题来了：在哪种意义上，Bee和Bird可以算Flier呢？<br>除了继承，当然一个可能的选择是类继承的方式。如果Bee和Bird都是类，对于父类和子类是有继承关系的。所以Flier可以使Bee和Bird的共同父类。然而这不一定是对的。因为Bee是一种昆虫，而Bird不是。虽然他们都可以飞行。所以我们需要一个类，能把他们联结在一起。<br>此外，如果Bee和Bird不是类怎么办？要知道在Swift中，这是很可能发生的，很多重要的对象都可以由结构体来替代类。但是结构体却没有继承等级。别忘了这是结构体和类的最主要的区别。所以说结构体也需要和类一样能够表达共同性。<br>Swift通过协议(Protocol)来解决这个问题。协议相当重要，在Swift Header中超多70个协议。此外Oc也有协议。Swift和Oc的协议大致相符，而且可以互换。Cocoa很依赖协议。<br>虽然协议是一种对象类型，但是却没有一个协议对象——你无法实例化一个协议。协议相当轻量化。一个协议的声明只是一堆属性和方法的列表。属性没有值，方法中没有代码。一个“真正的”对象就可以声明它属于这个协议；或者是说他采用(adopting)或者遵循(conforming)该协议。一个对象类型一旦采用了该协议就是表明它会使用协议列出的属性和方法。<br>比如说，作为一个Flier需要包括一个fly方法。所以Flier协议就可以标明fly方法：在协议的列表中添加fly，并且使函数体为空，就像这样：</p>
+<p>1<br>任何类型，包括枚举、结构体、类甚至其他的协议都可以采用这个协议。可以在协议前面用分号在声明中连接到上面类型名后面。（如果采用者是子类，协议跟在它的父类之后，中间用逗号号隔开。）<br>若Bird是一个结构体，它可以这样采用Filer协议：</p>
+<p>2<br>出现了点问题，原来是没有遵循协议内容使用fly方法，现在改一下：</p>
+<p>3<br>以上就是协议的大致内容，不过在现实中，我们还需要协议中的方法充实一点。<br>Tips：在Swift2.0中，多亏了协议扩展，协议可以声明方法并且提供具体实现内容，之后我将讲解。<br>为什么要用协议？<br>你现在可以对于为什么要用协议摸不着头脑。我们让Bird采用了Flier，之后呢？如果我们想要Bird知道怎么去fly，为什么我们不直接给他一个fly方法，反而给他协议呢？原因和类型分不开。别忘了，协议也是一个类型。Flier也是。所以我可以在任何我能用类型的地方使用Flier—— 将它声明为一个变量，例如用在函数参数处。</p>
+<p>4<br>想想上面的代码，它包含了协议的全部点。一个协议是一种类型，所以多态是成立的。协议提供了另一种表达类型和子类型概念的方式。由于可替换原则，这意味着Flier可以是任意类型的一个实例（注意定义的是实例方法，而非类方法）。无论对象类型是哪种，只要它采用了Flier协议，因为只要采用了该协议，就会有一个fly方法。因此编译器就会允许我们向这个对象发送fly消息。这样说了，一个Flier就是可以向其发送fly的对象。<br>然而反过来就不正确，也就是说有fly方法的对象不一定是Flier。毕竟只有采用了该协议才是Flier。</p>
+<p>5<br>这个Bee虽然有fly方法，但他不是Flier，所以tellToFly是不会接受它作为其参数的。为了使代码编译，可以在其声明后添加Flier协议：</p>
+<p>6.1</p>
+<p>6.2</p>
+<p>现在可以说下实际应用了。就像我之前说的，Swift中有大量的协议，让我们使用一二吧。其中一个很有用的协议就是CustomStringConvertible。这个协议需要我们使用description字符串属性。这有一个神奇的效果：当该属性的实例被用在字符\插入(Interpolation)或者输出(Print)的时候，description属性值将自动用于代表这个实例。<br>注意一个类型是可以采用多个协议的。比如Double类型就采用了CustomStringConvertible, Hashable, Comparable 等等协议。</p>
+<p>7</p>
+<p>当然上面的代码是不会编译的，因为我虽然让他们采用了上述的协议，但是在结构体内部没有定义具体的代码。<br>协议类型的检验和转型：<br>协议是一种类型，而且协议的采用者是其子类型。所以多态是适用的。因此当对象被声明为协议类型时，在对象的声明类型和实际类型之间调节的运算符就会工作。比如说，可以用is运算符去检测该对象是Bee还是Bird，因为声明类型Flier既可以是Bee又可以是Bird。</p>
+<p>8<br>类似地，as!和as?可以被用来将声明为协议类型的对象转型为实际类型。这个能力相当重要，因为接受协议的对象常常需要传递消息，而这协议是不能完成的。比如getworm这个方法：</p>
+<p>9<br>Bird作为Flier，它可以fly，而作为Bird，它可以getWorm。所以你不能告诉所有的Flier都让他们去getWorm：</p>
+<p>10<br>所以此时就需要将其进行转型：</p>
+<p>11<br>声明一个协议：<br>协议只能在文件的最顶端声明。通过使用关键字protocol来进行声明，之后写协议名（作为类型名，首字母大写），之后再跟大括号，里面写这些东西：<br>属性（Properties）:<br>在协议中，属性声明包括var关键字（不能是let）、属性名、冒号、其类型和大括号（包含get或者get set）。在以前，采用者对于属性的具体实施可以是可写入的，而在现在，它必须是：作为只读的计算属性或者常量（let）存储属性，调用者不能使用get set 属性。<br>至于声明static或者class属性，可以在属性前加static关键字。如果是采用者是类，那么和在类属性里面一样自由。<br>方法（Method）:<br>协议中的方法声明就是将普通函数声明去掉函数体，也就是，它没有大括号和函数内容。任何对象函数类型都是合法的，包括init和subsccript。（下标也是没有大括号和函数内容，但是和属性一样，会有get 或者get set）。<br>至于声明static或者class属性，可以在属性前加static关键字。如果是采用者是类，那么和在类属性里面一样自由。  </p>
+<p>当在枚举类型或者结构体类型中使用时，如果一个方法需要被声明为mutating，那么这个协议必须标记为mutating；而且如果协议中没有mutating，协议采用者不能添加mutating。但是，协议中有mutating，采用者可以省略。（其实这里说的都是要有mutating）<br>类型别名（Type Alias）:<br>协议声明中可以引入内部类型别名（Type alias）作为原本类型名的同义词。比如，typealias Time = Double 允许Time类型在协议大括号内部进行引用。其他地方，比如采用者类型中，Time并不存在，但是Double是它的一个匹配。<br>协议采用（Protocol adoption）：<br>协议自身就可以采用别的协议（一个或者多个），方法就像你所想的，分号后面用逗号隔开。事实上，这为你提供了建立完整的类型的二级继承体系！这在Swift头文件中被大量运用。<br>为了表达清楚，采用了别的协议的协议可能需要重复被采用协议的内容（在大括号里的），但是由于这种重复可能是隐式的，所以也不是必要的。然而，对象类型采用了这种协议既要满足此协议中的内容，还要满足该协议采用的其他协议的内容。<br>Tips：如果一个协议的目的仅仅是为了将其他协议组合起来（通过采用别的协议），而没有添加任何的新要求，而且你只在一个地方用这个协议的话，你大可不必这样。你可以直接用protocol\&lt;…,…>，括号里面的协议用逗号分隔。<br>可选的协议成员：<br>在Oc中，协议的成员可以被声明为可选值，表示该成员不一定要在采用者中实现。为了更好地兼容Oc，Swift允许可选的协议成员，但是只限于显式桥接到OC的协议中（通过将@objc置于协议之前），在这种协议中，可选的成员即内部的方法和属性也要标记optional：</p>
+<p>12<br>只有类才可以采用这样的协议，而且该特性在该类是NSObject的子类的情况下才会工作，或者可选成员被@objc标记、</p>
+<p>13<br>协议采用者并不保证会将可选成员实施，所以Swift不知道对其发送song或者sing消息是否安全。<br>在这种情况下，Swift通过将song包装进可选值中来解决问题。如果Flier 的采用者没用实现该属性，那么其结果就是一个nil，显然这没有什么危害。</p>
+<p>14<br>Tips:这是个很少见的情况，会以双重包装的可选值结束。比如，如果可选属性的值是String?，那么取得的值就是String??。<br>Warning：该可选属性可以通过其协议被声明为{get set}，但是没有合法的语法在这种协议类型的对象中去为这种属性赋值。如果f是一个Flier，song被定义为{get set}，你就不能设置f.song，我觉得这是一个Swift的bug。<br>像sing这样的可选方法，可能还要更复杂一些。如果方法没有被实现，我们是被禁止首先调用它的。为了解决这个问题，该方法自己就自动被标记成了该类型的可选值。因此要向它发送消息，就必须先进行解包。比较安全的方法就是用？解包：</p>
+<p>15<br>这段代码就可以很安全地运行了。只要采用者实现了sing，那么效果就是向f发送sing。如果Flier采用者没有实现sing，什么事也不会发生。如果用！强制解包，那么后面那种情况程序就会崩溃。<br>如果可选的方法返回一直值，那么此值也会被包在可选值中：</p>
+<p>16<br>如果你调用sing？( )，结果返回的就是可选的字符串：</p>
+<p>17<br>如果用！，那么结果就是String。<br>很多Cocoa协议都有可选成员。比如你的iOS app有一个app delegate类就采用了UIApplicationDelegate 协议。该协议的方法都是可选的。然而，事实上，这不会对你调用它们有什么影响，（你不需要对他们进行特别标注即@objc），因为你的appdelegate类已经是NSObject的子类了，所以这个特性将会直接生效，而不管你实不实现方法。同样地，你常常会使UIViewController的子类采用有可选成员的Cocoa delegate协议，这也是NSObject的子类，所以你直接实现你想实现的方法就可以了，而不用特别的标记。<br>类的协议：<br>类的协议是指，在声明中协议名后面冒号跟着class关键字的协议，表示它只能够被 类 对象类型 采用：</p>
+<p>18<br>（如果协议已经被@objc标记，那么就没有必要标记class了，因为@objc属性已经暗示它是一个类的协议了。）<br>一个主要的使用类的协议的原因就是：利用类的特性——特别的内存管理机制。</p>
+<p>19<br>关键字weak标记了delegate属性作为特殊内存管理，只有类的实例才有这种特殊内存管理。delegate属性是协议类型，而结构体和枚举都可能采用协议，所以为了满足编译器的要求：该对象事实上是类的实例，而不是结构体或者枚举的实例，所以这个协议被声明为类的协议。<br>隐式Required构造器：<br>设想一个协议声明了一个构造器，而且一个类采用了这个协议。由于该协议的规定，该类和其子类必须实现该构造器。因此该类不仅要实现构造器，而且它必须标记其为required。所以说，定义在协议中的构造器是隐式required，该类被显式强制实现这个要求。</p>
+<p>20<br>编译错误：Initializer requirement init( ) can only be satisfied by a required initializer in non-final class Bird.<br>为了解决这个问题，我们必须指定我们的构造器为required：</p>
+<p>21<br>或者，就像刚刚错误提示，还有一种方法，标记Bird类为final。这意味着它就不能有任何子类了——这也保证了这个问题不会再出现了。所以如果Bird标记为final，就不需要标记它的init为required了。<br>上面的代码汇总，Bird并没有被final标记，而是它的init被required标记。这意味着任何Bird 的子类将会实现制度构造器，所以就意味着它们放弃了构造器继承，必须实现required构造器并且标记required。<br>上面提到的和现实中iOS编程一个令人烦恼的特性密不可分。比如，你subclass了内置的Cocoa类 UIViewController（你很可能这么做），然后你给了这个子类一个构造器（你很可能这么做）：</p>
+<p>22<br>这个代码就不会编译。编译错误显示：required initializer init(coder: ) must be provided by subclass of UIViewController.<br>我们现在就知道其中的缘故了：UIViewController采用了一个NSCoding 的协议，而这个协议需要一个构造器 init(coder: )。这都不是你造成的，UIViewController 和NSCoding都是Cocoa定义的。但是这不碍事，这就是我刚刚提到的情形。你的UIViewController子类要不就是继承了init(coder:) 要不必须显式实现它并且标记required。既然你的子类已经有了一个指定构造器，那么继承就泡汤了，只能用后者了。<br>但是如果你压根儿没想过要实现这么个构造器，再这样操作这就显得没有意义了。Xcode的Fix-It特性提供了下面的方法：</p>
+<p>23<br>它既满足了构造器（在c5，会有为什么即使他没有完成条件，但依然是合法构造器的原因），又使得他在被调用的时候会自动crash。<br>如果你真的有要实现的东西，那么只需要删除fatalError 一行，并且用你自己的代码代替就可以了。最小的实现内容就是super.init(coder: aDecoder)，当然如果你有需要初始化的属性，你也可以先初始化它们。<br>不仅UIViewController，还有很多Cocoa的内置类都采用了NSCoding。如果你有它们的子类并且要自己初始化构造器，那么会经常遇到这个问题。<br>字面转换：<br>Swift中的一个非常好的点就是：它的很多特性是在内部实现的而且在头文件中可以看到。Literal就是一例。比如你可以直接写出5来制造一个值为5的Int（而不需要很正式地写Int(5)）不是因为玄学，而是因为Int采用了IntegerLiteralConvertible协议。不只是Int Literal 是这样工作，其他Literal也是这样的原理。下面是在Swift头文件中定义的literal convertible protocol：</p>
+<p>24<br>你自己的对象类型也可采用上面的转换协议。这意味着literal可以出现在你的对象类型实例可以出现的地方。<br>比如我们定义一个Nest类型，其中包括鸡蛋个数变量：</p>
+<p>25<br>因为Nest采用了IntegerLiteralConvertible，我们可以将Int传至Nest可以用的地方，然后init(integerLiteral：)就会被自动调用，从而产生一个新的Nest对象包含特定的鸡蛋数。</p>
+<p>26</p>
+
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2017/06/09/iosgeneric/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2017/06/09/iosrefer/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>Christian_Song &copy; 2017</span>
+    
+      <span class="split">|</span>
+      <span>尚辰的小房子</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="All that glisters is not gold.">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="尚辰">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="iOS9 with Swift 转型 Casting"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="All that glisters is not gold." />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Christian_Song"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+  <!-- Title -->
+  
+  <title>iOS9 with Swift 转型 Casting - Christian_Song</title>
+
+
+  <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="http://oct3pmpde.bkt.clouddn.com/timg.jpg" alt="Christian_Song" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>Christian_Song</span>
+            的部落宅
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首页
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                归档
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                关于
+              </a>
+            </li>
+          
+            <li>
+              <a href="/project">
+                
+                  <i class="fa fa-folder-open "></i>
+                
+                项目
+              </a>
+            </li>
+          
+            <li>
+              <a href="/photo">
+                
+                  <i class="fa fa-photo "></i>
+                
+                相册
+              </a>
+            </li>
+          
+            <li>
+              <a href="/guestbook">
+                
+                  <i class="fa fa-edit "></i>
+                
+                留言
+              </a>
+            </li>
+          
+            <li>
+              <a href="/atom.xml">
+                
+                  <i class="fa fa-send "></i>
+                
+                RSS
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            iOS9 with Swift 转型 Casting
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2017-06-09
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>由于Swift严格的类型检查，其编译器在规定什么样的消息可以发送给对象引用实行严格的限制。被允许发送给对象引用的消息是那些已经被引用的声明类型所允许的消息，其中包括它的继承。<br>由于多态的内部识别原则，这意味着一个对象可能有能力接受编译器原先不允许的消息。这对我们是一个严重的约束。<br>转型（casting）可以很好地解决这个问题。<br>把as关键字加在你想要的真正类型名之前，就可以实现转型。Swift不允许在原有的类型之间转型（Int ->String），但是把父类转型为子类是允许的，这叫做向下转型（Casting Down）。as！表示向下转型。！就是提醒你，向下转型是强制编译器做一些她不想做的事情。</p>
+<p>1<br>这段代码成功编译。这个例子还能以下面这种方便的方式表达：</p>
+<p>2<br>这种方式更方便的原因是：防止有其他的NoisyDog消息需要传送到对象。我们可以定义一个值，并且downcasting给它。现在这个值被推断为转型后的值，这样就可以多次调用，而切不用多次转型了。<br>as！的！同时也是在警示这个代码可能崩溃。这是因为我们有可能误导编译器。Casting Down是告诉编译器放松严格类型限制检查，这样即使你转型出错，编译器也有可能放行，但在App运行的时候会崩溃。</p>
+<p>3<br>这个例子中，我们告诉编译器这个对象将会是一个NoisyDog，于是编译器就放开手让我们操作，然而事实上，这个对象却是一个Dog类型，由此这段代码的运行结果就是  崩溃。<br>为了避免这种情况，你可以在实例运行的时候启用检查机制。一种方式就是使用is关键字。你可以使用is在一个条件语句中，如果通过检查，就可以继续转型了。</p>
+<p>4<br>这样，我们就会只在是NoisyDog的情况下转型了。<br>另一种方法则是使用as？关键字。这样转型的结果就是一个可选类型。</p>
+<p>5<br>这看起来不是那么的简洁。所以我们运用可选解包，将代码进一步精简：</p>
+<p>6<br>首先，我们使用as？运算符获得一个可选值（包含NoisyDog或者只是nil）。然后我们可选解包并且传入消息。如果传入的d不是NoisyDog，那么可选值是nil，则消息不会被传入。如果d是NoisyDog，那么他会被解包并且传入消息。所以说，这段代码是安全的。<br>回想之前的可选值的会自动解包来比较，as! as? is运算符也是一样的。</p>
+<p>7<br>如果这个可选值是一个nil，那么这个检查会有条不紊的结束。事实上，这个检查做了两件事情：可选值是不是nil？如果不是其包含的值是不是符合要求？<br>可选值怎样进行转型呢？事实上你不能真正地将可选值进行转型，但是你可以使用as!，因为Swift明白你要做什么。当在as!前面的是一个可选值，Swift会把它当成其解包后的值。也就是说，as!运算符应用的结果就是：Swift先进行了解包，再进行转型。</p>
+<p>8<br>然而这段代码是不安全的，没有进行检查，你不应该像这样进行转型，除非你很确定。如果d是nil，你将会在第二行崩溃，因为你在强制把nil解包。而如果d是一个Dog，你也会由于cast失败而面临崩溃。这就是为什么会有as?运算符，虽然生成了可选值但是更加安全。</p>
+<p>9<br>另一种你需要运用转型的情况是在进行Swift<br>和Oc进类型相似的值交换的时候。比如说，你可以把String 转为NSString，反之也可。这不是因为他们是父类子类，而是因为它们之间进行了桥接。在某种意义上，它们是相同类型，所以这不是向下转型（cast down），所以也没有什么危险，就可以直接用as。</p>
+<p>10<br>这个as就是告诉s待在Cocoa的世界里，来调用rangeOfString方法，因此他所产生的结果也是NSRang而不是一个Swift range。<br>这种桥接大量存在于此。经常地，你不需要进行这种转型，因为Swift会自动帮你完成。比如，Swift的Int和Cocoa的NSNumber是两个很不同的类型，但是尽管如此你还是可以常常地在要求NSNumber的地方使用Int。</p>
+<p>11<br>在这个代码中，我们使用了1这个Int值，事实上这里需要的是NSObject的实例。Int不仅不是NSObject而且还不是类的实例（它是一个结构体实例）。Swift会自动桥接转型，将Int变为NSNumber。<br>另一种情况，当你调用一个objectForKey：的时候，swift不知道该值究竟是什么类型的，所以你必须显式转型为Int。</p>
+<p>12</p>
+<p>ud.objectForkey(“Test”)会产生一个包含整数的NSNumber，所以转为Swift的Int类型是允许的。但是如果产生的不是一个NSNumber或者是一个nil，程序就会崩溃。如果你不太确定，还是使用is或者as?会比较安全。</p>
+
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2017/06/09/iosrefer/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2017/06/09/classpropertymethod/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>Christian_Song &copy; 2017</span>
+    
+      <span class="split">|</span>
+      <span>尚辰的小房子</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+</body>
+
+</html>

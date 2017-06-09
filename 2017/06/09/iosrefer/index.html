@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="All that glisters is not gold.">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="尚辰">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="iOS9 with Swift 类型引用"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="All that glisters is not gold." />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Christian_Song"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+  <!-- Title -->
+  
+  <title>iOS9 with Swift 类型引用 - Christian_Song</title>
+
+
+  <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="http://oct3pmpde.bkt.clouddn.com/timg.jpg" alt="Christian_Song" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>Christian_Song</span>
+            的部落宅
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首页
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                归档
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                关于
+              </a>
+            </li>
+          
+            <li>
+              <a href="/project">
+                
+                  <i class="fa fa-folder-open "></i>
+                
+                项目
+              </a>
+            </li>
+          
+            <li>
+              <a href="/photo">
+                
+                  <i class="fa fa-photo "></i>
+                
+                相册
+              </a>
+            </li>
+          
+            <li>
+              <a href="/guestbook">
+                
+                  <i class="fa fa-edit "></i>
+                
+                留言
+              </a>
+            </li>
+          
+            <li>
+              <a href="/atom.xml">
+                
+                  <i class="fa fa-send "></i>
+                
+                RSS
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            iOS9 with Swift 类型引用
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2017-06-09
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>对于一个实例来说，引用自身的类型是很有用的。比如向此类型传递消息。在之前的一个例子中，一个Dog实例方法通过消息显式传递将一个Dog类型属性取回。</p>
+<p>1<br>Dog.whatDogSay这样的表达方式看起来很笨拙而且一点也不灵活。为什么我们必须将代码写死？它是一个类，它应该知道自己的情况。<br>在Oc里，你可能已经习惯了使用类的实例方法解决这种情况。在Swift里，一个实例可能不是一个类，而是结构体或者枚举。swift实例有的是一个类型。对于这种目的，swift提供的实例方法中是动态类型方法。一个实例可以到达它的类型中，通过这种方法。因此，如果你不喜欢Dog类实例调用类方法通过显式“说”Dog这种方法，这里还有一个另外的方法：</p>
+<p>2<br>使用动态类型而非写死（hard-cording），一个重要的事情就是它遵循多态。</p>
+<p>3<br>现在看看会发生什么？</p>
+<p>4<br>像这样，我们告诉NoisyDog实例去bark，他就会说三次。其中的原因就是dynamicType：这个类型是实例事实是的那个类型。这就把这个类型变得动态了。我们把bark消息传递给NoisyDog实例。bark的实施指向这个实例，所救取出了三次“Woof”。<br>Tips: 你可以使用print(myobject.dynamicType)来输出对象类型，它会直接以字符串的形式输出。这对debug很有帮助。<br>在某些情况下，你可能想要将对象类型传递作一个变量。这是可以实现的，一个对象类型就是一个对象，下面是一些你需要知道的：<br>1、去声明可接受的对象类型——比如就像变量或者参数的类型，使用点运算符以及类型名和Type关键字。<br>2、将对象类型作为值来使用，比如，将类型赋给变量或者传给函数；使用类型的引用（类型名，或一些实例的dynamicType），很可能后面有self关键字和点号。<br>比如，下面这个函数接受Dog作为参数：</p>
+<p>5<br>下面是一个调用该函数的例子：</p>
+<p>6<br>或者还可以这样调用：</p>
+<p>7<br>为什么要这么做呢？一个典型的情况就是这个函数就像实例的加工厂：给他一个类型，它创建一个这种类型的实例，对它再加工一番，然后返回它。通过发送init(…)消息，你可以用一个变量引用这个类型去制作一个这种类型的实例。<br>比如，下面是一个Dog类型包含init(name:)构造器，和它的子类NoisyDog：</p>
+<p>8<br>下面是一个加工厂函数：制作一个Dog或者NoisyDog，给他一个名字，再返回它：</p>
+<p>9<br>就像你看到的，由于whattype指向一个类型，我们可以调用它的构造器去制作一个该类型的实例。然而出了一些问题，原因是编译器不清楚init(name: )是不是所有的Dog的子类都有。为了是编译器“安心”，我们必须声明构造器为required构造器：</p>
+<p>10</p>
+<p>之前我保证过，我已经告诉你为什么你要用required构造器，现在我遵守了承诺。required指定构造器是编译器安心，因为每个子类都必须继承或者重写init(name:) 所以发送给Dog或者其子类的对应类型是合法的。现在代码就可以用了。我么你可以调用上面的函数：</p>
+<p>11<br>在类的方法中，self代表这个类——多态地。这意味着在这个类的方法中，你可以发送消息给self去多态地调用构造器。请看这个例子：如果我们想要把之前的加工厂函数以类方法内嵌到类中，叫做makeAndName。我们想要这个类方法，无论我们发送消息给什么类，都会制造和返回一个有名字对应类的Dog。也就是说我们说Dog.makeAndName()，我们会得到一个Dog实例，我们说NoisyDog.makeAndName()，我们就会得到一个NoisyDog类。这种类型是多态的self类型，所以我们的makeAndName类方法初始化self：</p>
+<p>12<br>结果是这样的：</p>
+<p>13<br>但是这里有个问题。虽然d2事实上是一个NoisyDog，但是他的类型是Dog。这是因为该类方法声明返回一个Dog类。这恰恰不是我们想要的。我们想表达的是，返回一个与该方法调用者一样的类。也就是说，我们需要一个多态式的类型声明。这个类型就是Self（注意大写）。在这里，它被用作一个返回值，表示：返回一个它实际上类型的实例。</p>
+<p>14<br>现在当我们调用NoisyDog.makeAndName()的时候，我们就会得到一个NoisyDog类型的NoisyDog。Self也对实例方法声明有效。因此，我们可以为我们的加工厂函数写一个实例方法。这里我们以一个Dog或者NoisyDog开始，并告诉它有一个和它一样类型的小狗：</p>
+<p>15<br>测试一下它：</p>
+<p>16<br>就像预想的一样，d2是Dog. nd2是NoisyDog。<br>为了不被搞糊涂，还是弄一个Summary：<br>.dynamicType:<br>用在代码中，发送给实例：只要是该实例内部的可多态的类型就可以，不论实例引用的类型是什么。而且通过实例的dynamicType，Static/Class成员是可以get到的。<br>.Type:<br>用在声明中，发送给类型：可多态的类型（与该类型的实例相反）。比如，在一个函数声明中，Dog代表需要一个Dog类，但是Dog.Type代表类型本身。（这样才能调用类型方法嘛！）<br>.self:<br>用在代码中，发送给类型。比如，将Dog类型传递到需要Dog.Type的地方，比如Dog.self（传递.self 给实例不是非法的，但是毫无意义）。<br>self:<br>在实例代码中，这个实例是多态的。<br>在Static/Class代码中，也是多态的；self.init(…)初始化了这个类型。<br>Self:<br>用在方法声明中，当具体说明返回值类型，该类或者实例的类，可多态的。</p>
+
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2017/06/09/iosprotocol/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2017/06/09/ioscast/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>Christian_Song &copy; 2017</span>
+    
+      <span class="split">|</span>
+      <span>尚辰的小房子</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="All that glisters is not gold.">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="尚辰">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="iOS9 with Swift 伞型"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="All that glisters is not gold." />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Christian_Song"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- 百度统计 -->
+    <script>
+	var _hmt = _hmt || [];
+	(function() {
+  	var hm = document.createElement("script");
+  	hm.src = "https://hm.baidu.com/hm.js?c0451e16533956173997b85f7a8de666";
+  	var s = document.getElementsByTagName("script")[0]; 
+  	s.parentNode.insertBefore(hm, s);
+	})();
+    </script>
+  <!-- Title -->
+  
+  <title>iOS9 with Swift 伞型 - Christian_Song</title>
+
+
+  <link rel="shortcut icon" href="/images/favicon.ico">
+    <!--font-awesome-->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="http://oct3pmpde.bkt.clouddn.com/timg.jpg" alt="Christian_Song" height="60">
+        
+      </a>
+    </div>
+    <a class="header-name" href="/">
+            <span>Christian_Song</span>
+            的部落宅
+        </a>
+    <!-- navbar -->
+    <nav class="navbar">
+      <!--  nav links -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  <i class="fa fa-home "></i>
+                
+                首页
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  <i class="fa fa-archive "></i>
+                
+                归档
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  <i class="fa fa-user "></i>
+                
+                关于
+              </a>
+            </li>
+          
+            <li>
+              <a href="/project">
+                
+                  <i class="fa fa-folder-open "></i>
+                
+                项目
+              </a>
+            </li>
+          
+            <li>
+              <a href="/photo">
+                
+                  <i class="fa fa-photo "></i>
+                
+                相册
+              </a>
+            </li>
+          
+            <li>
+              <a href="/guestbook">
+                
+                  <i class="fa fa-edit "></i>
+                
+                留言
+              </a>
+            </li>
+          
+            <li>
+              <a href="/atom.xml">
+                
+                  <i class="fa fa-send "></i>
+                
+                RSS
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            iOS9 with Swift 伞型
+            
+          </h1>
+         
+        </div>
+         <p class="a-posted-on">
+          2017-06-09
+          </p>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>伞型（Umbrella Type）：<br>Swift提供了不少内置类型来作为替班伞型，它们能够在一个标头下包含多个实际类型。<br>AnyObject：<br>在实际编程汇总最常见的伞型就是AnyObject。它其实就是一个协议；它里面是全空的，没有要求任何的属性和方法。它有一个特性：所有的类都会自动采用它。因此在需要AnyObject的地方，任何类的实例都是可以被传递或者赋值的，还可以进行转型（cast）。</p>
+<p>1<br>有的不是类的Swift类型，比如String和其他基本数字类型，可以桥接到是类的Oc类型上（被Foundation框架定义）。这就意味着，如果有Foundation框架，这些可以桥接的Swift类型就可以被分配、传递和转型给AnyObject，即使它不是类。因为在后台它会先被自动转换成Oc的类。而且AnyObejct可以被向下转型为Swift的桥接类型，比如：</p>
+<p>2<br>遇到AnyObject的常见方法就是与Oc相互转换的过程。Swift向上向下转换AnyObject的方法和Oc向上向下转换id是一样的。实际上，AnyObject就是Swift版的id。<br>NSUserDefaults, NSCoding, and key–value coding都允许你通过String类型的关键名不确定的类中取出对象，这样的对象到了Swift中就是AnyObject，更准确的说是可选值包着的AnyObject，因为很有可能没有这个key，而这种情况Cocoa会返回nil值。一般地，AnyObject对你没什么用；你想的是要Swift知道具体是什么值，解包和转型是由你来决定的。如果你很确定，那么可以用强制解包和强制转型as！  </p>
+<p>3<br>抑制类型检查：<br>AnyObject还可以推迟编译器对特定消息可不可发送给对象的检查机制，类似于Oc的输入id可以推迟编译器检查什么消息可以被发送给id。因此你可以在没有将AnyObject转为特定类型的情况下，发送消息给它。（不过如果你知道对象的真实类型，还是尽早转型吧）<br>你不能仅仅发送老旧的消息给AnyObject；这些消息必须相符于满足下面标准之一的类型成员：<br>1、它是Oc的一个类的成员。<br>2、它是你创建的 Oc类的子类（或者扩展）的成员。<br>3、它是Swift类，而且被标记为@objc(或者dynamic)<br>这个特性基本上与可选的协议成员是类似的，虽然有一点小小的差别，让我们从两个类开始：</p>
+<p>4<br>Dog的noise属性和bark方法被标记为@objc，所以它们作为潜在消息是对发送给AnyObject可见的。为了验证这个，我将Cat定义为AnyObject再向它发送该消息，先从noise开始：</p>
+<p>5<br>这段代码竟然编译了！此外还可以运行！noise属性是被当做可选值包着的其原始类型输入的。而在这里它是可选值中包着String (Dog实现)。如果被声明为AnyObject的没有实现noise，那么它就会无害的返回nil。此外不像可选协议属性，该可选值会被隐式解包。因此如果AnyObject是实现了noise属性的类型（比如Dog），结果就是String。<br>现在再试试调用方法。</p>
+<p>6</p>
+<p>如上，如果该类型没有实现noise，那么将会返回nil，如果实现了结果就是可选值包着的String。使用bark!( )，结果是String，但是如果没有实现，那么程序就会崩溃。不像可选协议成员，你可以直接发送不解包的消息，这样和！强制解包效果是一样的：</p>
+<p>7<br>对象身份和类型身份：<br>有时，我们想知道的不是一个对象的类型是什么，而是这个对象是不是我们想的那个特定的对象。这个问题不会出现在值类型上，而会出现在引用类型上。可能类是引用类型，所以这个问题会出现在类的实例上。<br>Swift使用===运算符来解决这个问题。===可以被采用了AnyObject协议的对象类型实例使用，比如类。它不是像==那样比较值是不是相等，它是检验两个对象是不是引用同一个对象。它的否定形式是！==<br>一个典型的使用场景就是Cocoa中的类的实例，你想知道它是不是你所引用的对象。比如：NSNotification有一个object属性来帮助识别notification（usually, it is the original sender of the notification）。Cocoa不知道它的下级类型，这是另一个你将得到可选值包着Anyobject的情况。就像==，===也可以自动解包的，所以你就可以用它来确定object就是你想要的对象了。</p>
+<p>8<br>AnyClass：<br>AnyClass是AnyObject的类型。它相当于Oc中的Class类型，当Cocoa API想要说需要一个class，就会出现在其声明中了。<br>比如，UIView的layerClass类方法用Swift的方法声明时：</p>
+<p>9<br>这意味着：如果你重写该方法，会返回一个类。这大概是CALayer的子类。为了在实现中返回一个确切的类，把self消息发送给该类：</p>
+<p>10</p>
+<p>AnyClass对象的引用和AnyObject对象的引用很相似。你可以发送任何Swift知道的Oc消息，比如任何的Oc的类消息。</p>
+<p>11<br>Oc可以看到whatDogSays，并把它看做类类属性。因此你可以发送whatDogSays给AnyClass的引用。</p>
+<p>12<br>类型的引用变量（你可以通过发送dynamicType消息给其实例来获得其类型，或者通过其类型名后面加self来获得）的类型采用了AnyClass，你可以使用===来比较不同引用：</p>
+<p>13<br>如果d和whattype是一样的类型，这个就是true（这里不支持多态）。比如。Dog有个NoisyDog子类，如果参数分别是Dog( ) Dog.self ,或者 NoisyDog( ) NoisyDog.self，就是true。但是如果是 NoisyDog( ) Dog.self 就是正确的。<br>即使没有多态，这也是很有价值的。因为当在后面的是类本身的引用时，你不能用is运算符。<br>Any：<br>Any是一个被所有类型采用的空协议的别名。因此，可以用Any的地方，所以类型都能用。</p>
+<p>14<br>一个Any类型的对象可以被检验、转型到任何对象和函数类型。为了说明，这里有一个有关联类型的协议，还有两个显式决定其类型的采用者。</p>
+<p>15<br>现在这个函数需要两个参数：一个是Flier 一个是Any。检验第二个参数类型是不是和第一个参数的Other一样，这是合法的，因为Any可以和任何的类型的检验。</p>
+<p>16<br>如果我调用Bird和Insect为两个参数，那么就会显示they can flocktogether。如果我调用其中之一和另一种不是这两个的类型，就不会输出了。</p>
+
+        </div>
+      </article>
+    </div>
+    <!-- Pre or Next -->
+    
+	<div class="container" >
+           <ul class="pager">
+    	     
+      	     <li class="previous">
+              <a href="/2017/06/09/ioscollectiontype/" rel="prev">下一篇</a>
+             </li>
+           
+           
+              <li class="next">
+              <a href="/2017/06/09/iosextension/" rel="prev">上一篇</a>
+            </li>
+           
+          </ul>
+       </div>
+　　　　<!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+   
+　　　　
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>Christian_Song &copy; 2017</span>
+    
+      <span class="split">|</span>
+      <span>尚辰的小房子</span>
+    
+  </p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+</body>
+
+</html>
